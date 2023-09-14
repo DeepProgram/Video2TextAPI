@@ -59,7 +59,7 @@ DATABASES = {
 - User
     - Models
         - **UserData**
-            ```json
+            ```bash
             user_id = models.UUIDField()
             email = models.TextField()
             password = models.TextField()
@@ -92,7 +92,7 @@ DATABASES = {
 - Video
     - Model
         - **VideoData**
-            ```json
+            ```bash
             video_id = models.UUIDField()
             video_title = models.TextField()
             video_duration = models.IntegerField()
@@ -107,7 +107,7 @@ DATABASES = {
             video_processed_on = models.IntegerField(default=0)  # Epoch Time In Seconds
             ```
         - **RequestedVideo**
-            ```json
+            ```bash
             request_id = models.UUIDField()
             video_data = models.ForeignKey(VideoData, on_delete=models.CASCADE)
             requested_by = models.ForeignKey(UserData, on_delete=models.CASCADE)
@@ -117,7 +117,7 @@ DATABASES = {
             request_completed_epoch_time = models.IntegerField(default=0)
             ```
         - **VideoSegments**
-            ```json
+            ```bash
             clip_id = models.UUIDField()
             video_data = models.ForeignKey(VideoData, on_delete=models.CASCADE)
             start_time = models.FloatField()
@@ -125,7 +125,7 @@ DATABASES = {
             text = models.TextField()
             ```
         - **ProcessVideoSession**
-            ```json
+            ```bash
             session_id = models.UUIDField()
             user_data = models.ForeignKey(UserData, on_delete=models.CASCADE)
             session_creation_time = models.IntegerField()
