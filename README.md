@@ -47,12 +47,15 @@ DATABASES = {
 6.Apply database migration
 
 `docker-compose exec -it django_conatiner_v2tapi bash`
+
 `python manage.py makemigrations`
+
 `python manage.py migrate`
 
 7.Create a superuser to be able to acces the admin panel
 
 `docker-compose exec -it django_conatiner_v2tapi bash`
+
 `python manage.py createsuperuser`
 ## Features
 
