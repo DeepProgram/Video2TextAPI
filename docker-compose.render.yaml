@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.render
+      platform: linux/amd64
+    volumes:
+      - .:/django
+    ports:
+      - 8000:8000
+    image: app:django
+    container_name: django_conatiner_v2tapi
+    command: python manage.py runserver 0.0.0.0:8000
+
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    container_name: postgres_db_v2tapi
+
+  redis:
+    image: redis:latest
+  celery_worker:
+    build: .
+    command: celery -A config worker --loglevel=info --concurrency 1 -E
+    volumes:
+      - .:/django
+
+volumes:
+  postgres_data:
