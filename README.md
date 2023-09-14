@@ -219,10 +219,13 @@ DATABASES = {
         - **serve_video_segment** accepts file_name as endpoint path and if it finds the file_name in that folder **content/segment/** then it returns the file in response
 ## Screenshots
 Docker Running On Terminal
+
 ![App Screenshot](https://raw.githubusercontent.com/DeepProgram/Video2TextAPI/screenshot/terminal.png)
 
 Database List In Admin Panel
+
 ![App Screenshot](https://raw.githubusercontent.com/DeepProgram/Video2TextAPI/screenshot/admin_panel.png)
 
 Content Folder Tree
+
 ![App Screenshot](https://raw.githubusercontent.com/DeepProgram/Video2TextAPI/screenshot/content_tree.png)
