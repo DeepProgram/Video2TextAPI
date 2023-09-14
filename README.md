@@ -24,7 +24,7 @@ In order to be able to run Push locally you will need to have docker and docker-
 - **video**
 
 3.Add database credential in **config/settings.py**
-```json
+```bash
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
